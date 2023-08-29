@@ -1,10 +1,10 @@
-{
-    "default": {
-        "parallel":2,
-        "format":["html:cucumber-report.html"],
-      "publish-quiet": true,
-      "paths":["./features/**/*,{feature,feature,md}"],
-      "require":["./features/support/*.{ts,js}"],
+ {
+     "default": {
+         "parallel":2,
+         "format":["html:cucumber-report.html"],
+       "publish-quiet": true,
+       "paths":["./features/**/*,{feature,feature,md}"],
+       "require":["./features/support/*.{ts,js}"],
       "requireModule": ["ts-node/register"]
-    }
-  }
+     }
+   }
