@@ -16,6 +16,7 @@
     "hamjest": "^4.0.1"
   },
   "dependencies": {
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "ts-node": "^10.9.1"
   }
 }
