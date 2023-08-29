@@ -6,11 +6,16 @@
   "scripts": {
     "test": "cucumber-js"
   },
-  "keywords": ["cucumber"],
+  "keywords": [
+    "cucumber"
+  ],
   "author": "Nomandla Khwenenyana",
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^9.4.0",
     "hamjest": "^4.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
   }
 }
