@@ -1,9 +1,9 @@
-Feature: login
+Feature:login
 
-Scenario: successfull login
+Scenario:login
 Given I am on the login page 
-When Start to type your When step here I enter my username and password
+When  I enter my user name "exampleuser" and password "secretpassword"
 And I click on the login button
-Then It should redirect me to the home dashboard
-And I should see a welcome page
+Then I should be redirect to the dashboard page
+Then I should see a welcome message
 

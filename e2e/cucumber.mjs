@@ -1,15 +1,7 @@
- import dotenv from "dotenv"
-
-dotenv.config()
-const {env} = process
-const QUIET = env.QUIET ==="1"
- const PATHS = env.PATHS || "./features/**/*,{feature,feature,md}";
- const REQUIRE = env.REQUIRE || "./step-definitions/*.{ts,js}";
- export default {
-     parallel: 2,
-     format: ['html:cucumber-report.html'],
-     publishQuiet : QUIET,
-     paths: [PATHS],
-     require :[REQUIRE],
-     requireModule:["ts-node/register"],
-   }
+export default {
+    parallel: 2,
+    format: ['html:cucumber-report.html'],
+    require: ['./features/step-definitions/*.{js,ts}'], // Update with the correct path
+    requireModule: ['ts-node/register']
+  };
+  
