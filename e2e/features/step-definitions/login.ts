@@ -1,24 +1,31 @@
 import { Given, When, Then } from '@cucumber/cucumber';
+import { chromium, expect, Page } from '@playwright/test';
 
-Given('I am on the login page', function () {
-  // Implement the code to navigate to the login page
-  // For example: navigate to your login URL
-});
-When('I enter my user name {string} and password {string}', function (username, password) {
-    
-});
+let page: Page;
 
-When('I click on the login button', function () {
-  // Implement the code to click the login button
-  // For example: find the login button and click it
+Given('I am on the login page', async () => {
+  const browser = await chromium.launch();
+  page = await browser.newPage();
+  await page.goto('https://itthynk.co.za/');
 });
 
-Then('I should be redirect to the dashboard page', function () {
-  // Implement the code to verify the redirection to the dashboard
-  // For example: check the URL or elements on the dashboard page
+When('I enter my username {string} and password {string}', async (username, password) => {
+  await page.fill('#username-input', username);
+  await page.fill('#password-input', password);
 });
 
-Then('I should see a welcome message', function () {
-  // Implement the code to verify the presence of a welcome message or element
-  // For example: check for a welcome message on the page
+When('I click on the login button', async () => {
+  await page.click('#login-button');
+});
+
+Then('I should be redirected to the dashboard page', async () => {
+  // Implement verification logic for the dashboard page URL or elements
+  const url = await page.url();
+  expect(url).toContain('dashboard');
+});
+
+Then('I should see a welcome message', async () => {
+  // Implement verification logic for the presence of a welcome message
+  const welcomeElement = await page.waitForSelector('.welcome-message');
+  expect(welcomeElement).not.toBeNull();
 });

@@ -57,11 +57,12 @@ body{
 
 }
 .blog-img{
-    width: 100%;
+    width: 100px;
     height: auto;
-    object-fit: cover;
+    object-fit: center;
     object-position: center;
-    padding-left: 100px;
+    padding-left:0px;
+    padding-right: 200px;
 }
 .bun{
     color: blueviolet;
